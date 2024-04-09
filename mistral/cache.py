@@ -1,14 +1,32 @@
 import torch
 from typing import List, Tuple
 from dataclasses import dataclass
-
+'''
 from xformers.ops.fmha.attn_bias import (
     AttentionBias,
     BlockDiagonalCausalMask,
     BlockDiagonalCausalWithOffsetPaddedKeysMask,
     BlockDiagonalMask,
 )
+'''
 
+#  Mock classes for attention bias
+class AttentionBias:
+    def __init__(self, *args, **kwargs):
+        pass
+
+    def __call__(self, *args, **kwargs):
+        # Mock the output of the attention bias
+        return torch.tensor(0.0)
+
+class BlockDiagonalCausalMask(AttentionBias):
+    pass
+
+class BlockDiagonalCausalWithOffsetPaddedKeysMask(AttentionBias):
+    pass
+
+class BlockDiagonalMask(AttentionBias):
+    pass
 
 @dataclass
 class RotatingCacheInputMetadata:
